@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 //simulating data
 const qrcode_details = {
   image: qrcode,
-  code: "posdkfIOFS78SDFPO9847584podkfg",
+  code: "https://as1.ftcdn.net/v2/jpg/00/14/81/98/1000_F_14819808_SUTdhgP5QBodFDqGwEU8uRj9ez9V9BUR.jpg",
 };
 
 export const QRCode = () => {

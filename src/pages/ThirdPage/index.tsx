@@ -11,13 +11,16 @@ import { HeaderText } from "../../components/HeaderText";
 import { Identifier } from "../../components/Identifier";
 import { Logo } from "../../components/Logo";
 import { PaymentSteps } from "../../components/PaymentSteps";
-import { headline_page_three, identifier } from "../../constants";
+import { identifier } from "../../constants";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const ThirdPage = () => {
+  const [installments] = useLocalStorage<any>("chosenInstallment", []);
+
   return (
     <Container>
       <Logo />
-      <HeaderText text={headline_page_three} />
+      <HeaderText text={`João, pague o restante em ${installments.times - 1}x no cartão`} />
       <Form />
       <Deadline text="15/12/2021 - 08:17" />
       <PaymentSteps isSelected={1} isOnGoing={2} />

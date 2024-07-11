@@ -10,13 +10,16 @@ import { Logo } from "../../components/Logo";
 import { QRCode } from "../../components/QRCode";
 import { Link } from "react-router-dom";
 import { PaymentSteps } from "../../components/PaymentSteps";
-import { deadline, headline_page_two, identifier } from "../../constants";
+import { deadline, identifier } from "../../constants";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const SecondPage = () => {
+  const [installments] = useLocalStorage<any>("chosenInstallment", []);
+
   return (
     <Container>
       <Logo />
-      <HeaderText text={headline_page_two} />
+      <HeaderText text={`João, pague a entrada de R$${installments.value} pelo Pix`} />
       <QRCode />
       <Deadline text={deadline} />
       <PaymentSteps isSelected={0} isOnGoing={1} />

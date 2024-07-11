@@ -31,7 +31,7 @@ export const FirstPage = () => {
             total={installment.total}
             isSelected={selectedCard === installment.times}
             onClick={() => {
-              setSelectedCard(installment.times), setToLocalStorage(installment.times);
+              setSelectedCard(installment.times), setToLocalStorage(installment);
             }}
           />
         ))}

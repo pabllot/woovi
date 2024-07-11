@@ -4,12 +4,18 @@ import { findValue } from "../../utils/findValue";
 import { PaymentStepLine } from "../PaymentStepLine";
 
 export const PaymentSteps = ({ isSelected, isOnGoing }: any) => {
-  const [installments] = useLocalStorage<number>("numberOfInstallments", 0);
+  const [installments] = useLocalStorage<any>("chosenInstallment", []);
 
   return (
     <div>
-      {payments.slice(0, installments).map((payment) => (
-        <PaymentStepLine text={payment.text} value={findValue(installments)} isSelected={isSelected === payment.id} isOnGoing={isOnGoing === payment.id} />
+      {payments.slice(0, installments.times).map((payment) => (
+        <PaymentStepLine
+          key={payment.id}
+          text={payment.text}
+          value={findValue(installments.times)}
+          isSelected={isSelected === payment.id}
+          isOnGoing={isOnGoing === payment.id}
+        />
       ))}
     </div>
   );

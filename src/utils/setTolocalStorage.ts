@@ -1,3 +1,3 @@
-export const setToLocalStorage = (times: number) => {
-  localStorage.setItem("numberOfInstallments", JSON.stringify(times));
+export const setToLocalStorage = (installment: any) => {
+  localStorage.setItem("chosenInstallment", JSON.stringify(installment));
 };
