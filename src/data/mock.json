@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "times": 1,
+      "value": "30.500,00",
+      "bonus": "Ganhe 3% de cashback",
+      "tag": "Pix",
+      "observation": "🤑 R$ 300,00 de volta no seu Pix na hora",
+      "total": null
+    },
+    {
+      "id": 2,
+      "times": 2,
+      "value": "15.300,00",
+      "bonus": null,
+      "tag": "Pix Parcelado",
+      "observation": null,
+      "total": "30.600,00"
+    },
+    {
+      "id": 3,
+      "times": 3,
+      "value": "10.196,66",
+      "bonus": null,
+      "tag": null,
+      "observation": null,
+      "total": "30.620,00"
+    },
+    {
+      "id": 4,
+      "times": 4,
+      "value": "7.725,00",
+      "bonus": null,
+      "tag": null,
+      "observation": "-3% de juros: Melhor opção de parcelmento",
+      "total": "30.900,00"
+    },
+    {
+      "id": 5,
+      "times": 5,
+      "value": "6.300,00",
+      "bonus": null,
+      "tag": null,
+      "observation": null,
+      "total": "31.500,00"
+    },
+    {
+      "id": 6,
+      "times": 6,
+      "value": "5.283,33",
+      "bonus": null,
+      "tag": null,
+      "observation": null,
+      "total": "31.699,98"
+    },
+    {
+      "id": 7,
+      "times": 7,
+      "value": "4.542,85",
+      "bonus": null,
+      "tag": null,
+      "observation": null,
+      "total": "31.800,00"
+    }
+  ]
+}

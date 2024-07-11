@@ -1,0 +1,17 @@
+.button {
+  border: 1px solid gray;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+}
+.buttonHighlighted {
+  background-color: #03d69d;
+  border: none;
+}
