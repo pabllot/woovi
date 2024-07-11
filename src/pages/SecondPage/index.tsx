@@ -9,23 +9,29 @@ import { Identifier } from "../../components/Identifier";
 import { Logo } from "../../components/Logo";
 import { QRCode } from "../../components/QRCode";
 import { Link } from "react-router-dom";
+import { PaymentSteps } from "../../components/PaymentSteps";
+import { deadline, headline_page_two, identifier } from "../../constants";
 
 export const SecondPage = () => {
   return (
     <Container>
       <Logo />
-      <HeaderText text="João, pague a entrada de R$15.300,00 pelo Pix" />
+      <HeaderText text={headline_page_two} />
       <QRCode />
-      <Deadline text="15/12/2021 - 08:17" />
+      <Deadline text={deadline} />
+      <PaymentSteps isSelected={0} isOnGoing={1} />
       <CET percentage="0,5" value="30.600,00" />
       <FAQ />
-      <Identifier text="2c1b951f356c4680b13ba1c9fc889c47" />
+      <Identifier text={identifier} />
+
       <Button color="secondary" variant="contained" component={Link} to="/3">
         <span style={{ fontSize: "16px" }}>Continuar com o pagamento</span>
       </Button>
+
       <Button color="warning" variant="contained" component={Link} to="/">
         <span style={{ fontSize: "16px", fontWeight: "700" }}>Voltar</span>
       </Button>
+
       <Footer />
     </Container>
   );

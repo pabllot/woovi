@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 import { Footer } from "../../components/Footer";
 import { Installment } from "../../types";
@@ -8,7 +9,8 @@ import { InstallmentCard } from "../../components/InstallmentCard";
 import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
-import { Button } from "@mui/material";
+import { headline_page_one } from "../../constants";
+import { setToLocalStorage } from "../../utils/setTolocalStorage";
 
 export const FirstPage = () => {
   const [selectedCard, setSelectedCard] = useState(2);
@@ -16,7 +18,7 @@ export const FirstPage = () => {
   return (
     <Container>
       <Logo />
-      <HeaderText text="João, como você quer pagar?" />
+      <HeaderText text={headline_page_one} />
       <div style={{ paddingBottom: ".5rem" }}>
         {data.map((installment: Installment) => (
           <InstallmentCard
@@ -28,7 +30,9 @@ export const FirstPage = () => {
             value={installment.value}
             total={installment.total}
             isSelected={selectedCard === installment.times}
-            onClick={() => setSelectedCard(installment.times)}
+            onClick={() => {
+              setSelectedCard(installment.times), setToLocalStorage(installment.times);
+            }}
           />
         ))}
       </div>
