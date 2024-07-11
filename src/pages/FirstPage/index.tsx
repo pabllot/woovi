@@ -11,9 +11,11 @@ import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
 import { setToLocalStorage } from "../../utils/setTolocalStorage";
 import { user } from "../../data/user";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const FirstPage = () => {
-  const [selectedCard, setSelectedCard] = useState(2);
+  const [installments] = useLocalStorage<any>("chosenInstallment", []);
+  const [selectedCard, setSelectedCard] = useState(installments.times || 2);
   const firstName = user.name.split(" ")[0];
 
   return (

@@ -26,7 +26,7 @@ export const ThirdPage = () => {
       <Form />
       <Deadline text="15/12/2021 - 08:17" />
       <PaymentSteps isSelected={1} isOnGoing={2} />
-      <CET percentage="0,5" value="31.500,00" />
+      <CET percentage="0,5" value={installments.total} />
       <FAQ />
       <Button color="warning" variant="contained" component={Link} to="/2">
         <span style={{ fontSize: "16px", fontWeight: "700" }}>Voltar</span>

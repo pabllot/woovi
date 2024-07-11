@@ -25,7 +25,7 @@ export const SecondPage = () => {
       <QRCode />
       <Deadline text={deadline} />
       <PaymentSteps isSelected={0} isOnGoing={1} />
-      <CET percentage="0,5" value="30.600,00" />
+      <CET percentage="0,5" value={installments.total} />
       <FAQ />
       <Identifier text={identifier} />
 
