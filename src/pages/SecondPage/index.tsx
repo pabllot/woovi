@@ -1,5 +1,6 @@
 import { CET } from "../../components/CET";
 import { Container } from "../../components/Container";
+import { Deadline } from "../../components/Deadline";
 import { FAQ } from "../../components/FAQ";
 import { Footer } from "../../components/Footer";
 import { HeaderText } from "../../components/HeaderText";
@@ -13,6 +14,7 @@ export const SecondPage = () => {
       <Logo />
       <HeaderText text="João, pague a entrada de R$ 15.300,00 pelo Pix" />
       <QRCode />
+      <Deadline text="15/12/2021 - 08:17" />
       <CET percentage="0,5" value="30.600,00" />
       <FAQ />
       <Identifier text="2c1b951f356c4680b13ba1c9fc889c47" />
