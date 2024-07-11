@@ -1,5 +1,6 @@
 import { payments } from "../../data/payment_steps";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { findValue } from "../../utils/findValue";
 import { PaymentStepLine } from "../PaymentStepLine";
 
 export const PaymentSteps = ({ isSelected, isOnGoing }: any) => {
@@ -8,7 +9,7 @@ export const PaymentSteps = ({ isSelected, isOnGoing }: any) => {
   return (
     <div>
       {payments.slice(0, installments).map((payment) => (
-        <PaymentStepLine text={payment.text} value={payment.value} isSelected={isSelected === payment.id} isOnGoing={isOnGoing === payment.id} />
+        <PaymentStepLine text={payment.text} value={findValue(installments)} isSelected={isSelected === payment.id} isOnGoing={isOnGoing === payment.id} />
       ))}
     </div>
   );
