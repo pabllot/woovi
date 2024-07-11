@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
+import PaymentsIcon from "@mui/icons-material/Payments";
 import AddCardIcon from "@mui/icons-material/AddCard";
-import QrCode2Icon from "@mui/icons-material/QrCode2";
+import PixIcon from "@mui/icons-material/Pix";
 
 export const SimpleBottomNavigation = () => {
   const location = useLocation();
@@ -37,21 +37,21 @@ export const SimpleBottomNavigation = () => {
         }}
       >
         <BottomNavigationAction
-          label="Escolher"
-          icon={<PsychologyAltIcon sx={{ color: value === 0 ? activeColor : color }} />}
+          label="Parcelas "
+          icon={<PaymentsIcon sx={{ color: value === 0 ? activeColor : color }} />}
           component={Link}
           to="/"
           style={{ color: value === 0 ? activeColor : color }}
         />
         <BottomNavigationAction
-          label="QR CODE"
-          icon={<QrCode2Icon sx={{ color: value === 1 ? activeColor : color }} />}
+          label="PIX"
+          icon={<PixIcon sx={{ color: value === 1 ? activeColor : color }} />}
           component={Link}
           to="/2"
           style={{ color: value === 1 ? activeColor : color }}
         />
         <BottomNavigationAction
-          label="Pagamento"
+          label="Cartão"
           icon={<AddCardIcon sx={{ color: value === 2 ? activeColor : color }} />}
           component={Link}
           to="/3"
