@@ -1,4 +1,6 @@
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 import { CET } from "../../components/CET";
 import { Container } from "../../components/Container";
 import { Deadline } from "../../components/Deadline";
@@ -8,24 +10,23 @@ import { HeaderText } from "../../components/HeaderText";
 import { Identifier } from "../../components/Identifier";
 import { Logo } from "../../components/Logo";
 import { QRCode } from "../../components/QRCode";
-import { Link } from "react-router-dom";
 import { PaymentSteps } from "../../components/PaymentSteps";
 import { deadline, identifier } from "../../constants";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { user } from "../../data/user";
+import useStore from "../../store";
 
 export const SecondPage = () => {
-  const [installments] = useLocalStorage<any>("chosenInstallment", []);
+  const installment = useStore((state) => state.installment);
   const firstName = user.name.split(" ")[0];
 
   return (
     <Container>
       <Logo />
-      <HeaderText text={`${firstName}, pague a entrada de R$${installments.value} pelo Pix`} />
+      <HeaderText text={`${firstName}, pague a entrada de R$${installment?.value} pelo Pix`} />
       <QRCode />
       <Deadline text={deadline} />
       <PaymentSteps isSelected={0} isOnGoing={1} />
-      <CET percentage="0,5" value={installments.total} />
+      <CET percentage="0,5" value={installment?.total ? installment.total : ""} />
       <FAQ />
       <Identifier text={identifier} />
 

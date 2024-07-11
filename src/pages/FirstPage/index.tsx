@@ -9,14 +9,18 @@ import { InstallmentCard } from "../../components/InstallmentCard";
 import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
-import { setToLocalStorage } from "../../utils/setTolocalStorage";
 import { user } from "../../data/user";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import useStore from "../../store";
 
 export const FirstPage = () => {
-  const [installments] = useLocalStorage<any>("chosenInstallment", []);
-  const [selectedCard, setSelectedCard] = useState(installments.times || 2);
+  const setInstallment = useStore((state) => state.setInstallment);
+  const installment = useStore((state) => state.installment);
+  const [selectedCard, setSelectedCard] = useState(installment?.times || 2);
   const firstName = user.name.split(" ")[0];
+
+  const handleConfirm = (installment: Installment) => {
+    setInstallment(installment);
+  };
 
   return (
     <Container>
@@ -34,7 +38,7 @@ export const FirstPage = () => {
             total={installment.total}
             isSelected={selectedCard === installment.times}
             onClick={() => {
-              setSelectedCard(installment.times), setToLocalStorage(installment);
+              setSelectedCard(installment.times), handleConfirm(installment);
             }}
           />
         ))}
