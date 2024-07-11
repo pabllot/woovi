@@ -8,9 +8,9 @@ import styles from "./styles.module.scss";
 
 export const FAQ = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Accordion className={styles.accordion}>
-        <AccordionSummary expandIcon={<ExpandLessIcon />} aria-controls="panel2-content" id="panel2-header">
+        <AccordionSummary className={styles.summary} expandIcon={<ExpandLessIcon />} aria-controls="panel2-content" id="panel2-header">
           <Typography className={styles.title}>Como funciona?</Typography>
         </AccordionSummary>
         <AccordionDetails>
