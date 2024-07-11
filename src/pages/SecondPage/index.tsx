@@ -11,12 +11,12 @@ import { Identifier } from "../../components/Identifier";
 import { Logo } from "../../components/Logo";
 import { QRCode } from "../../components/QRCode";
 import { PaymentSteps } from "../../components/PaymentSteps";
-import { deadline, identifier } from "../../constants";
 import { user } from "../../data/user";
 import useStore from "../../store";
 
 export const SecondPage = () => {
   const installment = useStore((state) => state.installment);
+  const deadline = useStore((state) => state.deadline);
   const firstName = user.name.split(" ")[0];
 
   return (
@@ -24,11 +24,11 @@ export const SecondPage = () => {
       <Logo />
       <HeaderText text={`${firstName}, pague a entrada de R$${installment?.value} pelo Pix`} />
       <QRCode />
-      <Deadline text={deadline} />
+      <Deadline text={deadline || ""} />
       <PaymentSteps isSelected={0} isOnGoing={1} />
       <CET percentage="0,5" value={installment?.total ? installment.total : ""} />
       <FAQ />
-      <Identifier text={identifier} />
+      <Identifier text={user.identifier} />
 
       <Button color="secondary" variant="contained" component={Link} to="/3">
         <span style={{ fontSize: "16px" }}>Continuar com o pagamento</span>
