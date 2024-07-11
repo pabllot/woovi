@@ -4,7 +4,7 @@
 
 <h2>Overview</h2>
 
-<p>The Woovi Challenge project is a React application developed as part of the Woovi hiring process. It demonstrates my skills in building a responsive web application using React and integrating it with external APIs.</p>
+<p>The Woovi Challenge project is a React application developed as part of the Woovi hiring process. It demonstrates my skills in building a responsive web application using React.</p>
 
 <h2>Live Demo</h2>
 
