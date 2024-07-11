@@ -20,7 +20,7 @@ export const ThirdPage = () => {
       <CET percentage="0,5" value="31.500,00" />
       <FAQ />
       <Button color="warning" variant="contained" component={Link} to="/">
-        <span style={{ fontSize: "16px" }}>Voltar</span>
+        <span style={{ fontSize: "16px", fontWeight: "700" }}>Voltar</span>
       </Button>
       <Identifier text="2c1b951f356c4680b13ba1c9fc889c47" />
       <Footer />

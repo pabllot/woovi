@@ -24,7 +24,7 @@ export const SecondPage = () => {
         <span style={{ fontSize: "16px" }}>Continuar com o pagamento</span>
       </Button>
       <Button color="warning" variant="contained" component={Link} to="/">
-        <span style={{ fontSize: "16px" }}>Voltar</span>
+        <span style={{ fontSize: "16px", fontWeight: "700" }}>Voltar</span>
       </Button>
       <Footer />
     </Container>
