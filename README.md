@@ -38,4 +38,21 @@ cd woovi
   <li>React</li>
   <li>Material-UI (MUI)</li>
   <li>Vercel (for deployment)</li>
+  <li>Zustand</li>
 </ul>
+
+<h2>State Management with Zustand</h2>
+
+<p>In this project, I chose to use Zustand for state management, especially to handle the chosen installment on the first page, allowing me to work with this data seamlessly throughout the application.</p>
+
+<h3>Why Zustand?</h3>
+
+<ul>
+  <li><strong>Simplicity:</strong> Zustand has a minimal API and is easy to set up and use.</li>
+  <li><strong>Performance:</strong> Zustand avoids unnecessary re-renders and offers better performance. (comparing to useContext)</li>
+  <li><strong>Scalability:</strong> Zustand is suitable for larger applications with more complex state management needs.</li>
+</ul>
+
+<h3>Data Persistence with Local Storage</h3>
+
+<p>To ensure that state data is not lost across page refreshes and browser sessions, I integrated Zustand with local storage. This approach saves the application state in the browser's local storage, providing a persistent state across sessions.</p>
