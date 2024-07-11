@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+<h1>Woovi Challenge</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>This repository contains my solution for the Woovi Challenge.</p>
 
-Currently, two official plugins are available:
+<h2>Overview</h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p>The Woovi Challenge project is a React application developed as part of the Woovi hiring process. It demonstrates my skills in building a responsive web application using React and integrating it with external APIs.</p>
 
-## Expanding the ESLint configuration
+<h2>Live Demo</h2>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<p>Check out the live demo of this project hosted on Vercel: <a href="https://woovi-challenge-rouge.vercel.app/">Woovi Challenge Demo</a></p>
 
-- Configure the top-level `parserOptions` property like this:
+<h2>Installation</h2>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<p>To run this project locally, follow these steps:</p>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<ol>
+  <li><strong>Clone the Repository</strong></li>
+  <pre><code>git clone https://github.com/pabllot/woovi.git
+cd woovi
+  </code></pre>
+
+  <li><strong>Install Dependencies</strong></li>
+  <pre><code>npm install
+  </code></pre>
+
+  <li><strong>Start the Development Server</strong></li>
+  <pre><code>npm run dev
+  </code></pre>
+
+  <li><strong>View the Application</strong></li>
+  <p>Open your web browser and navigate to <a href="http://localhost:5173">http://localhost:3000</a> to view the application.</p>
+</ol>
+
+<h2>Technologies Used</h2>
+
+<ul>
+  <li>React</li>
+  <li>Material-UI (MUI)</li>
+  <li>Vercel (for deployment)</li>
+</ul>
