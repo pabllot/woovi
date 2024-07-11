@@ -12,14 +12,16 @@ import { Link } from "react-router-dom";
 import { PaymentSteps } from "../../components/PaymentSteps";
 import { deadline, identifier } from "../../constants";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { user } from "../../data/user";
 
 export const SecondPage = () => {
   const [installments] = useLocalStorage<any>("chosenInstallment", []);
+  const firstName = user.name.split(" ")[0];
 
   return (
     <Container>
       <Logo />
-      <HeaderText text={`João, pague a entrada de R$${installments.value} pelo Pix`} />
+      <HeaderText text={`${firstName}, pague a entrada de R$${installments.value} pelo Pix`} />
       <QRCode />
       <Deadline text={deadline} />
       <PaymentSteps isSelected={0} isOnGoing={1} />

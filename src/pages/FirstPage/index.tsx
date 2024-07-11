@@ -9,16 +9,17 @@ import { InstallmentCard } from "../../components/InstallmentCard";
 import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
-import { headline_page_one } from "../../constants";
 import { setToLocalStorage } from "../../utils/setTolocalStorage";
+import { user } from "../../data/user";
 
 export const FirstPage = () => {
   const [selectedCard, setSelectedCard] = useState(2);
+  const firstName = user.name.split(" ")[0];
 
   return (
     <Container>
       <Logo />
-      <HeaderText text={headline_page_one} />
+      <HeaderText text={`${firstName}, como você quer pagar?`} />
       <div style={{ paddingBottom: ".5rem" }}>
         {data.map((installment: Installment) => (
           <InstallmentCard

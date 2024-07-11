@@ -13,14 +13,16 @@ import { Logo } from "../../components/Logo";
 import { PaymentSteps } from "../../components/PaymentSteps";
 import { identifier } from "../../constants";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { user } from "../../data/user";
 
 export const ThirdPage = () => {
   const [installments] = useLocalStorage<any>("chosenInstallment", []);
+  const firstName = user.name.split(" ")[0];
 
   return (
     <Container>
       <Logo />
-      <HeaderText text={`João, pague o restante em ${installments.times - 1}x no cartão`} />
+      <HeaderText text={`${firstName}, pague o restante em ${installments.times - 1}x no cartão`} />
       <Form />
       <Deadline text="15/12/2021 - 08:17" />
       <PaymentSteps isSelected={1} isOnGoing={2} />
