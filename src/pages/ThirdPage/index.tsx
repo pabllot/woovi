@@ -1,3 +1,4 @@
+import { SimpleBottomNavigation } from "../../components/BottomNavigation";
 import { CET } from "../../components/CET";
 import { Container } from "../../components/Container";
 import { Deadline } from "../../components/Deadline";
@@ -7,7 +8,6 @@ import { Form } from "../../components/Form";
 import { HeaderText } from "../../components/HeaderText";
 import { Identifier } from "../../components/Identifier";
 import { Logo } from "../../components/Logo";
-import styles from "./styles.module.scss";
 
 export const ThirdPage = () => {
   return (
@@ -20,6 +20,7 @@ export const ThirdPage = () => {
       <FAQ />
       <Identifier text="2c1b951f356c4680b13ba1c9fc889c47" />
       <Footer />
+      <SimpleBottomNavigation />
     </Container>
   );
 };

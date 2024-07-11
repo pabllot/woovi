@@ -7,6 +7,7 @@ import { InstallmentCard } from "../../components/InstallmentCard";
 import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
+import { SimpleBottomNavigation } from "../../components/BottomNavigation";
 
 export const FirstPage = () => {
   const [selectedCard, setSelectedCard] = useState(2);
@@ -31,6 +32,7 @@ export const FirstPage = () => {
         ))}
       </div>
       <Footer />
+      <SimpleBottomNavigation />
     </Container>
   );
 };

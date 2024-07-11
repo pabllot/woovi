@@ -1,3 +1,4 @@
+import { SimpleBottomNavigation } from "../../components/BottomNavigation";
 import { CET } from "../../components/CET";
 import { Container } from "../../components/Container";
 import { Deadline } from "../../components/Deadline";
@@ -19,6 +20,7 @@ export const SecondPage = () => {
       <FAQ />
       <Identifier text="2c1b951f356c4680b13ba1c9fc889c47" />
       <Footer />
+      <SimpleBottomNavigation />
     </Container>
   );
 };
