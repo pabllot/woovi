@@ -6,6 +6,10 @@ export const theme = createTheme({
       main: "#133A6F",
       contrastText: "#f1f1f1",
     },
+    warning: {
+      main: "#03d69d",
+      contrastText: "#f1f1f1",
+    },
   },
   components: {
     MuiButton: {
