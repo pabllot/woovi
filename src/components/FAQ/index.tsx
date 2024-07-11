@@ -14,7 +14,7 @@ export const FAQ = () => {
           <Typography className={styles.title}>Como funciona?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>Pergunta pro Seraphini.</Typography>
+          <Typography>Pagamento de forma rápida e segura com a woovi.</Typography>
         </AccordionDetails>
       </Accordion>
     </div>
