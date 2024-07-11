@@ -29,7 +29,7 @@ cd woovi
   </code></pre>
 
   <li><strong>View the Application</strong></li>
-  <p>Open your web browser and navigate to <a href="http://localhost:5173">http://localhost:3000</a> to view the application.</p>
+  <p>Open your web browser and navigate to <a href="http://localhost:5173">http://localhost:5173</a> to view the application.</p>
 </ol>
 
 <h2>Technologies Used</h2>
