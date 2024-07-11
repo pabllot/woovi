@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Footer } from "../../components/Footer";
 import { Installment } from "../../types";
@@ -8,6 +9,7 @@ import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
 import { SimpleBottomNavigation } from "../../components/BottomNavigation";
+import { Button } from "@mui/material";
 
 export const FirstPage = () => {
   const [selectedCard, setSelectedCard] = useState(2);
@@ -16,7 +18,7 @@ export const FirstPage = () => {
     <Container>
       <Logo />
       <HeaderText text="João, como você quer pagar?" />
-      <div>
+      <div style={{ paddingBottom: ".5rem" }}>
         {data.map((installment: Installment) => (
           <InstallmentCard
             key={installment.id}
@@ -31,6 +33,9 @@ export const FirstPage = () => {
           />
         ))}
       </div>
+      <Button color="secondary" variant="contained" component={Link} to="/2">
+        <span style={{ fontSize: "16px" }}>Confirmar</span>
+      </Button>
       <Footer />
       <SimpleBottomNavigation />
     </Container>
