@@ -8,7 +8,6 @@ import { InstallmentCard } from "../../components/InstallmentCard";
 import { Logo } from "../../components/Logo";
 import { data } from "../../data/mock.json";
 import { Container } from "../../components/Container";
-import { SimpleBottomNavigation } from "../../components/BottomNavigation";
 import { Button } from "@mui/material";
 
 export const FirstPage = () => {
@@ -34,10 +33,9 @@ export const FirstPage = () => {
         ))}
       </div>
       <Button color="secondary" variant="contained" component={Link} to="/2">
-        <span style={{ fontSize: "16px" }}>Confirmar</span>
+        <span style={{ fontSize: "16px" }}>Continuar com o pagamento</span>
       </Button>
       <Footer />
-      <SimpleBottomNavigation />
     </Container>
   );
 };
