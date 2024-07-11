@@ -13,7 +13,7 @@ export const SimpleBottomNavigation = () => {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/1":
+      case "/":
         setValue(0);
         break;
       case "/2":
@@ -40,7 +40,7 @@ export const SimpleBottomNavigation = () => {
           label="Escolher"
           icon={<PsychologyAltIcon sx={{ color: value === 0 ? activeColor : color }} />}
           component={Link}
-          to="/1"
+          to="/"
           style={{ color: value === 0 ? activeColor : color }}
         />
         <BottomNavigationAction
