@@ -15,5 +15,12 @@ export const theme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          borderRadius: "none",
+        },
+      },
+    },
   },
 });
