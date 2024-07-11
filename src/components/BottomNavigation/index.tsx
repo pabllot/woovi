@@ -29,32 +29,24 @@ export const SimpleBottomNavigation = () => {
 
   return (
     <Box>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(_, newValue) => {
-          setValue(newValue);
-        }}
-      >
+      <BottomNavigation showLabels value={value}>
         <BottomNavigationAction
           label="Parcelas "
           icon={<PaymentsIcon sx={{ color: value === 0 ? activeColor : color }} />}
           component={Link}
-          to="/"
+          to={"/"}
           style={{ color: value === 0 ? activeColor : color }}
         />
         <BottomNavigationAction
           label="PIX"
           icon={<PixIcon sx={{ color: value === 1 ? activeColor : color }} />}
-          component={Link}
-          to="/2"
+          component={location.pathname !== "/" ? Link : "button"}
+          to={"/2"}
           style={{ color: value === 1 ? activeColor : color }}
         />
         <BottomNavigationAction
           label="Cartão"
           icon={<AddCardIcon sx={{ color: value === 2 ? activeColor : color }} />}
-          component={Link}
-          to="/3"
           style={{ color: value === 2 ? activeColor : color }}
         />
       </BottomNavigation>
