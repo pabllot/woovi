@@ -16,7 +16,14 @@ export const QRCode = () => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    setOpen(true);
+    navigator.clipboard
+      .writeText(qrcode_details.code)
+      .then(() => {
+        setOpen(true);
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
   };
 
   const handleClose = () => {
