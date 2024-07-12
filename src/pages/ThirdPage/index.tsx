@@ -18,12 +18,17 @@ export const ThirdPage = () => {
   const installment = useStore((state) => state.installment);
   const deadline = useStore((state) => state.deadline);
   const firstName = user.name.split(" ")[0];
+  const allPaidOff = installment?.times === 1;
 
   return (
     <Container>
       <Logo />
-      <HeaderText text={`${firstName}, pague o restante em ${installment ? installment?.times - 1 : "1"}x no cartão`} />
-      <Form />
+      <HeaderText
+        text={
+          allPaidOff ? `Parabéns ${firstName}, está tudo pago.` : `${firstName}, pague o restante em ${installment ? installment?.times - 1 : "1"}x no cartão`
+        }
+      />
+      <Form allPaidOff={allPaidOff} />
       <Deadline text={deadline || ""} />
       <PaymentSteps active={1} />
       <CET percentage="0,5" value={installment?.total || ""} />

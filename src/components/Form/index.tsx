@@ -3,12 +3,12 @@ import MenuItem from "@mui/material/MenuItem";
 import InputMask from "react-input-mask";
 import { Button } from "@mui/material";
 
-import { options } from "../../data/select_options";
-import styles from "./styles.module.scss";
-import useStore from "../../store";
 import { findValue } from "../../utils/findValue";
+import { options } from "../../data/select_options";
+import useStore from "../../store";
+import styles from "./styles.module.scss";
 
-export const Form = () => {
+export const Form = ({ allPaidOff }: { allPaidOff: boolean }) => {
   const installment = useStore((state) => state.installment);
 
   return (
@@ -27,14 +27,14 @@ export const Form = () => {
         </InputMask>{" "}
         <TextField label="CVV" className={styles.input} inputProps={{ maxLength: 3 }} />
       </div>
-      <TextField select defaultValue="1" className={styles.input}>
+      <TextField select defaultValue="1" className={styles.input} disabled={allPaidOff}>
         {options.slice(0, (installment?.times || 0) - 1).map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label + findValue(installment ? installment.times : 0)}
           </MenuItem>
         ))}
       </TextField>
-      <Button color="secondary" variant="contained">
+      <Button color="secondary" variant="contained" disabled={allPaidOff}>
         <span className={styles.btn}>Pagar</span>
       </Button>
     </div>
