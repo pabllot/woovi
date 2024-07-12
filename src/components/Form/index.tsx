@@ -1,62 +1,29 @@
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
+import InputMask from "react-input-mask";
 import { Button } from "@mui/material";
 
 import { options } from "../../data/select_options";
-import { user } from "../../data/user";
 import styles from "./styles.module.scss";
 
 export const Form = () => {
   return (
     <div className={styles.wrapper}>
-      <TextField
-        id="outlined-read-only-input"
-        label="Nome completo"
-        defaultValue={user.name}
-        InputProps={{
-          readOnly: true,
-        }}
-        className={styles.input}
-      />
-      <TextField
-        id="outlined-read-only-input"
-        label="CPF"
-        defaultValue={user.cpf}
-        InputProps={{
-          readOnly: true,
-        }}
-        className={styles.input}
-      />
-      <TextField
-        id="outlined-read-only-input"
-        label="Número do cartão"
-        defaultValue="405.503.503-15"
-        InputProps={{
-          readOnly: true,
-        }}
-        className={styles.input}
-      />
+      <TextField label="Nome completo" className={styles.input} />
+      {/* @ts-ignore */}
+      <InputMask mask="999.999.999-99">{() => <TextField id="cpf-input" label="CPF" className={styles.input} variant="outlined" />}</InputMask>
+      <InputMask mask="9999 9999 9999 9999" alwaysShowMask={false}>
+        {/* @ts-ignore */}
+        {(inputProps) => <TextField {...inputProps} id="credit-card-input" label="Número do cartão" className={styles.input} variant="outlined" />}
+      </InputMask>{" "}
       <div className={styles.twoInARow}>
-        <TextField
-          id="outlined-read-only-input"
-          label="Vencimento"
-          defaultValue={user.dueTo}
-          InputProps={{
-            readOnly: true,
-          }}
-          className={styles.input}
-        />
-        <TextField
-          id="outlined-read-only-input"
-          label="CVV"
-          defaultValue={user.securityNumber}
-          InputProps={{
-            readOnly: true,
-          }}
-          className={styles.input}
-        />
+        <InputMask mask="99/99" alwaysShowMask={false}>
+          {/* @ts-ignore */}
+          {(inputProps) => <TextField {...inputProps} id="expiration-date-input" label="Vencimento (MM/AA)" className={styles.input} variant="outlined" />}
+        </InputMask>{" "}
+        <TextField label="CVV" className={styles.input} inputProps={{ maxLength: 3 }} />
       </div>
-      <TextField id="outlined-read-only-input" select defaultValue="1" className={styles.input}>
+      <TextField select defaultValue="1" className={styles.input}>
         {options.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
