@@ -55,5 +55,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiStepConnector: {
+      styleOverrides: {
+        line: {
+          borderWidth: "2.5px",
+          borderColor: "#E5E5E5",
+        },
+      },
+    },
   },
 });
