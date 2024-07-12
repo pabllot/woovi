@@ -1,22 +1,26 @@
+import { Box, Step, StepLabel, Stepper, Typography } from "@mui/material";
+
 import { payments } from "../../data/payment_steps";
 import { findValue } from "../../utils/findValue";
-import { PaymentStepLine } from "../PaymentStepLine";
 import useStore from "../../store";
 
-export const PaymentSteps = ({ isSelected, isOnGoing }: any) => {
+export const PaymentSteps = ({ active }: { active: number }) => {
   const installment = useStore((state) => state.installment);
 
   return (
-    <div>
-      {payments.slice(0, installment?.times).map((payment) => (
-        <PaymentStepLine
-          key={payment.id}
-          text={payment.text}
-          value={findValue(installment ? installment.times : 0)}
-          isSelected={isSelected === payment.id}
-          isOnGoing={isOnGoing === payment.id}
-        />
-      ))}
-    </div>
+    <Box>
+      <Stepper activeStep={active} orientation="vertical">
+        {payments.slice(0, installment?.times).map((payment, index) => (
+          <Step key={index}>
+            <StepLabel>
+              <Box display="flex" justifyContent="space-between" width="100%">
+                <Typography sx={{ fontSize: "18px" }}>{payment.text}</Typography>
+                <Typography sx={{ fontWeight: 600, fontSize: "18px" }}>R$ {findValue(installment ? installment.times : 0)}</Typography>
+              </Box>
+            </StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </Box>
   );
 };

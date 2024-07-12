@@ -1,6 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: 'font-family: "Nunito", sans-serif;',
+  },
   palette: {
     secondary: {
       main: "#133A6F",
@@ -31,6 +34,24 @@ export const theme = createTheme({
           borderRadius: "none",
           outline: "none",
           boxShadow: "none",
+        },
+      },
+    },
+    MuiStepIcon: {
+      styleOverrides: {
+        root: {
+          color: "white",
+          border: "1px solid gray",
+          borderRadius: "50%",
+
+          "&.Mui-active": {
+            border: "2px solid #03D69D",
+            color: "white",
+          },
+          "&.Mui-completed": {
+            color: "#03D69D",
+            border: "none",
+          },
         },
       },
     },

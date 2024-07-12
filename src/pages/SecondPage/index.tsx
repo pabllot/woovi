@@ -25,7 +25,7 @@ export const SecondPage = () => {
       <HeaderText text={`${firstName}, pague a entrada de R$${installment?.value} pelo Pix`} />
       <QRCode />
       <Deadline text={deadline || ""} />
-      <PaymentSteps isSelected={0} isOnGoing={1} />
+      <PaymentSteps active={0} />
       <CET percentage="0,5" value={installment?.total ? installment.total : ""} />
       <FAQ />
       <Identifier text={user.identifier} />

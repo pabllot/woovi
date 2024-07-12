@@ -25,7 +25,7 @@ export const ThirdPage = () => {
       <HeaderText text={`${firstName}, pague o restante em ${installment ? installment?.times - 1 : "1"}x no cartão`} />
       <Form />
       <Deadline text={deadline || ""} />
-      <PaymentSteps isSelected={1} isOnGoing={2} />
+      <PaymentSteps active={1} />
       <CET percentage="0,5" value={installment?.total || ""} />
       <FAQ />
       <Button color="warning" variant="contained" component={Link} to="/2">
