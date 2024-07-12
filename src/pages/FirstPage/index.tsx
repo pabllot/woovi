@@ -15,7 +15,7 @@ import useStore from "../../store";
 export const FirstPage = () => {
   const setInstallment = useStore((state) => state.setInstallment);
   const installment = useStore((state) => state.installment);
-  const [selectedCard, setSelectedCard] = useState(installment?.times || 2);
+  const [selectedCard, setSelectedCard] = useState(installment?.times || null);
   const firstName = user.name.split(" ")[0];
 
   const handleConfirm = (installment: Installment) => {
@@ -43,7 +43,7 @@ export const FirstPage = () => {
           />
         ))}
       </div>
-      <Button color="secondary" variant="contained" component={Link} to="/2">
+      <Button color="secondary" disabled={!selectedCard} variant="contained" component={Link} to="/2">
         <span style={{ fontSize: "16px" }}>Continuar com o pagamento</span>
       </Button>
       <Footer />
