@@ -14,7 +14,7 @@ export const InstallmentCard = ({ tag, observation, bonus, times, value, total, 
       <InstallmentCardValues times={times} value={value} />
       <CheckButton isSelected={isSelected} />
       {bonus && <Bonus text={bonus} />}
-      {total && <Total text={total} />}
+      {total && times !== 1 && <Total text={total} />}
       {observation && <Observation text={observation} isSelected={isSelected} />}
     </div>
   );
