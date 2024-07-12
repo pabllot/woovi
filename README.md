@@ -56,3 +56,5 @@ cd woovi
 <h3>Data Persistence with Local Storage</h3>
 
 <p>To ensure that state data is not lost across page refreshes and browser sessions, I integrated Zustand with local storage. This approach saves the application state in the browser's local storage, providing a persistent state across sessions.</p>
+
+<a href="https://www.linkedin.com/in/pabloteixeira1/">Linkedin</a>
