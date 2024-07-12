@@ -5,8 +5,12 @@ import { Button } from "@mui/material";
 
 import { options } from "../../data/select_options";
 import styles from "./styles.module.scss";
+import useStore from "../../store";
+import { findValue } from "../../utils/findValue";
 
 export const Form = () => {
+  const installment = useStore((state) => state.installment);
+
   return (
     <div className={styles.wrapper}>
       <TextField label="Nome completo" className={styles.input} />
@@ -24,9 +28,9 @@ export const Form = () => {
         <TextField label="CVV" className={styles.input} inputProps={{ maxLength: 3 }} />
       </div>
       <TextField select defaultValue="1" className={styles.input}>
-        {options.map((option) => (
+        {options.slice(0, (installment?.times || 0) - 1).map((option) => (
           <MenuItem key={option.value} value={option.value}>
-            {option.label}
+            {option.label + findValue(installment ? installment.times : 0)}
           </MenuItem>
         ))}
       </TextField>
