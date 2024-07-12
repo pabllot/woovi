@@ -14,8 +14,8 @@ export const PaymentSteps = ({ active }: { active: number }) => {
           <Step key={index}>
             <StepLabel>
               <Box display="flex" justifyContent="space-between" width="100%">
-                <Typography sx={{ fontSize: "18px" }}>{payment.text}</Typography>
-                <Typography sx={{ fontWeight: 600, fontSize: "18px" }}>R$ {findValue(installment ? installment.times : 0)}</Typography>
+                <Typography sx={{ fontWeight: 600, fontSize: "18px", color: "#4D4D4D" }}>{payment.text}</Typography>
+                <Typography sx={{ fontWeight: 800, fontSize: "18px", color: "#4D4D4D" }}>R$ {findValue(installment ? installment.times : 0)}</Typography>
               </Box>
             </StepLabel>
           </Step>
