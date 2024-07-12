@@ -17,6 +17,12 @@ export const theme = createTheme({
         root: {
           textTransform: "none",
         },
+        containedWarning: {
+          "&:hover": {
+            backgroundColor: "#03d69d",
+            color: "#e9e9e9",
+          },
+        },
       },
     },
     MuiAccordion: {
